@@ -44,7 +44,7 @@ st.write("Upload a CSV or enter planet features manually. The pipeline must be i
 # ===========================
 loaded_pipeline = None
 try:
-    with open(r"C:\Users\Lenovo\Desktop\Nasa Space APPS\Earth\knn_pipeline.pkl", "rb") as f:
+    with open("knn_pipeline.pkl", "rb") as f:
         loaded_pipeline = joblib.load(f)
 except Exception as e:
     st.error(f"Could not load pipeline file 'knn_pipeline.pkl'.\nMake sure the file exists and is a saved pipeline. Error: {e}")
@@ -193,3 +193,4 @@ if submitted:
 
 st.markdown("---")
 st.caption("Make sure `knn_pipeline.pkl` (the trained pipeline) is in the same folder as this app. The pipeline must include all preprocessing steps (encoders, scalers) so you can pass raw DataFrame rows directly.")
+
